@@ -34,7 +34,12 @@ def numerical_gradient_2d(f, X):
 def numerical_gradient(f, x):
     h = 1e-4 # 0.0001
     grad = np.zeros_like(x)
+    '''
+    np.nditer()
+    默认情况下，nditer将视待迭代遍历的数组为只读对象（read-only），
+    为了在遍历数组的同时，实现对数组元素值得修改，必须指定op_flags=['readwrite']
     
+    '''
     it = np.nditer(x, flags=['multi_index'], op_flags=['readwrite'])
     while not it.finished:
         idx = it.multi_index

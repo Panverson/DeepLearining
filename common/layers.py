@@ -282,3 +282,4 @@ class Pooling:
         dx = col2im(dcol, self.x.shape, self.pool_h, self.pool_w, self.stride, self.pad)
         
         return dx
+
